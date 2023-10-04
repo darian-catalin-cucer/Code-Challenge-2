@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/inputTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textAlignment="textEnd"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="16dp"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/inputTextView"
+        android:layout_marginBottom="32dp"
+        android:text=""/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resultTextView"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:layout_alignParentBottom="true">
+
+        <!-- Digits -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:onClick="onDigitClick"/>
+
+        <!-- Add more buttons for digits 2-9 here -->
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_columnWeight="2"
+            android:layout_rowWeight="1"
+            android:onClick="onDigitClick"/>
+
+        <!-- Operators -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:onClick="onOperatorClick"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:onClick="onOperatorClick"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:onClick="onOperatorClick"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:onClick="onOperatorClick"/>
+
+        <!-- Equals and Clear Buttons -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:onClick="onEqualsClick"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:onClick="onClearClick"/>
+    </GridLayout>
+</RelativeLayout>

@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Code Challenge 2</string>
+    <string name="app_name">Calculator</string>
+    <string name="error_message">Error</string>
+    <string name="clear_button_label">C</string>
 </resources>
