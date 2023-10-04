@@ -9,6 +9,7 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
     private lateinit var inputTextView: TextView
     private lateinit var resultTextView: TextView
+    private lateinit var pressedButtonsTextView: TextView
 
     private var currentInput = ""
     private var currentOperator = ""
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         inputTextView = findViewById(R.id.inputTextView)
         resultTextView = findViewById(R.id.resultTextView)
+        pressedButtonsTextView = findViewById(R.id.pressedButtonsTextView)
     }
 
     fun onDigitClick(view: View) {
@@ -28,9 +30,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onOperatorClick(view: View) {
-        currentOperator = (view as Button).text.toString()
-        currentInput += currentOperator
-        updateInputText()
+        val operator = (view as Button).text.toString()
+        if (currentOperator.isEmpty()) {
+            currentOperator = operator
+            currentInput += operator
+            updateInputText()
+        }
     }
 
     fun onEqualsClick(view: View) {
@@ -51,10 +56,16 @@ class MainActivity : AppCompatActivity() {
         currentOperator = ""
         updateInputText()
         resultTextView.text = ""
+        pressedButtonsTextView.text = ""
+        pressedButtonsTextView.visibility = View.GONE
     }
 
     private fun updateInputText() {
         inputTextView.text = currentInput
+        if (pressedButtonsTextView.visibility == View.GONE) {
+            pressedButtonsTextView.visibility = View.VISIBLE
+        }
+        pressedButtonsTextView.text = currentInput
     }
 
     private fun evaluateExpression(): Double {
