@@ -1,5 +1,5 @@
 # Code-Challenge-2
-[15m] Create a basic calculator app that can perform addition, subtraction, multiplication, and division operations.
+Create a basic calculator app that can perform addition, subtraction, multiplication, and division operations.
 
 # Requirements:
 
