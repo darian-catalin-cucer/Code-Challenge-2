@@ -36,19 +36,22 @@ class MainActivity : AppCompatActivity() {
     fun onEqualsClick(view: View) {
         try {
             val result = evaluateExpression()
-            resultTextView.text = result.toString()
+            currentInput = result.toString()
+            currentOperator = ""
+            updateInputText()
         } catch (e: Exception) {
-            resultTextView.text = "Error"
+            currentInput = "Error"
+            currentOperator = ""
+            updateInputText()
         }
     }
 
     fun onClearClick(view: View) {
         currentInput = ""
         currentOperator = ""
-        inputTextView.text = ""
-        resultTextView.text = getString(R.string.error_message)
+        updateInputText()
+        resultTextView.text = ""
     }
-
 
     private fun updateInputText() {
         inputTextView.text = currentInput
